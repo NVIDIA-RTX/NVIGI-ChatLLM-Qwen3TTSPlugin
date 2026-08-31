@@ -1,0 +1,6 @@
+{
+  "name": "Qwen3-TTS-12Hz-q8_0-v1.0",
+  "vram": 5120,
+  "language": "multi",
+  "description": "Qwen3-TTS ChatLLM.cpp q8_0 weights (0.6B + 1.7B Base/CustomVoice/VoiceDesign). The plugin fully offloads the model and caps context at 4096 tokens."
+}

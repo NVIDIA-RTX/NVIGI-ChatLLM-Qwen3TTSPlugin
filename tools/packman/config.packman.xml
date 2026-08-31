@@ -1,0 +1,32 @@
+<config remotes="cloudfront habilis-public habilis-internal gtl onnxruntime_github cudnn_nvidia_dev cufft_nvidia_dev cublas_nvidia_dev nvigi_github">
+    <remote2 name="onnxruntime_github">
+		<transport actions="download" protocol="https" packageLocation="github.com/microsoft/onnxruntime/releases/download/${version}/${name}" />
+	</remote2>
+    <remote2 name="cudnn_nvidia_dev">
+		<transport actions="download" protocol="https" packageLocation="developer.download.nvidia.com/compute/cudnn/redist/cudnn/${version}/${name}" />
+	</remote2>
+    <remote2 name="cufft_nvidia_dev">
+		<transport actions="download" protocol="https" packageLocation="developer.download.nvidia.com/compute/cuda/redist/libcufft/${version}/${name}" />
+	</remote2>
+    <remote2 name="cublas_nvidia_dev">
+		<transport actions="download" protocol="https" packageLocation="developer.download.nvidia.com/compute/cuda/redist/libcublas/${version}/${name}" />
+	</remote2>
+	<remote2 name="cloudfront">
+		<transport actions="download" protocol="http" packageLocation="d4i3qtqj3r0z5.cloudfront.net/${name}@${version}" />
+	</remote2>
+	<remote2 name="nvigi_github">
+		<transport actions="download" protocol="https" packageLocation="github.com/NVIDIA-RTX/NVIGI-Core/releases/download/ga-${version}/${name}_${version}.7z" />
+	</remote2>
+	<remote2 name="habilis-public">
+		<transport actions="download" protocol="https" packageLocation="d1b766znqykvab.cloudfront.net/${name}@${version}"/>
+		<transport actions="list" protocol="https" packageLocation="lspackages.nvidia.com/api/v1/list/habilis-external" />
+	</remote2>
+	<remote2 name="habilis-internal">
+		<transport actions="download" protocol="https" packageLocation="lspackages.nvidia.com/api/v1/download/habilis-internal/${name}@${version}" />
+		<transport actions="list" protocol="https" packageLocation="lspackages.nvidia.com/api/v1/list/habilis-internal" />
+		<transport actions="upload" protocol="s3" packageLocation="habilis-internal" />
+	</remote2>
+	<remote2 name="gtl">
+		<transport actions="download list upload" protocol="gtl" />
+	</remote2>
+</config>

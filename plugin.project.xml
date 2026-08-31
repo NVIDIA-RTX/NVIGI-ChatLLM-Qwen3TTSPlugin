@@ -1,0 +1,18 @@
+<project toolsVersion="6.21">
+	<!-- Pinned to the same core PDK the plugin is currently built against in the NVIGI SDK tree. -->
+	<dependency name="nvigi_core" linkPath="nvigi_core">
+		<package name="nvigi_core_pdk_win64" version="202605152013-6e7ce722" platforms="windows-x86_64"/>
+	</dependency>
+	<dependency name="nlohmann_json" linkPath="external/json">
+		<package name="nlohmann_json" version="3.10.5.1-b440a32a-windows-x86_64" platforms="windows-x86_64"/>
+		<package name="nlohmann_json" version="3.10.5.1-b440a32a-windows-x86_64" platforms="linux-x86_64"/>
+	</dependency>
+	<!-- ChatLLM.cpp ships libchatllm.dll with GGML statically linked; cuBLAS 13 DLLs are in the same package. -->
+	<dependency name="chatllm" linkPath="external/chatllmcpp">
+		<package name="chatllmcpp" version="282c3c7a0877b8af97a7fde92526f880b6174160" platforms="windows-x86_64"/>
+	</dependency>
+	<!-- Sample only: basic_tts.cpp / cxx_wrappers link vulkan-1.lib for optional d3d12/vulkan backends. -->
+	<dependency name="vulkansdk" linkPath="external/vulkanSDK">
+		<package name="vulkansdk" version="1.4.321.1-windows-x86_64" platforms="windows-x86_64"/>
+	</dependency>
+</project>
